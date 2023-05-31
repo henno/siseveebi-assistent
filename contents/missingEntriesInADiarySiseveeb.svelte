@@ -24,6 +24,14 @@
   `
         return style
     }
+
+
+
+
+
+
+
+
     export const config: PlasmoCSConfig = {
         matches: ["https://siseveeb.voco.ee/kutseope/oppetoo/paevik/taitmine*"]
     }
@@ -43,18 +51,35 @@
     }
 
 
+
 </script>
 
 <script>
     console.log(2)
-    let count = 0
-    let increment = () => count++
+    let missingEntries = [
+        {day: "2021-09-01", hours: 2, type: "S"},
+    ]
+
 </script>
 
 <div>
-    <dl>
-        <dt>Count</dt>
-        <dd>{count}</dd>
-    </dl>
-
+    <h1>Päevikust puuduvad tunnid:</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Kuupäev</th>
+            <th>Tunnid</th>
+            <th>Tüüp</th>
+        </tr>
+        </thead>
+        <tbody>
+        {#each missingEntries as missingEntry, i}
+            <tr>
+                <td>{missingEntry.day}</td>
+                <td>{missingEntry.hours}</td>
+                <td>{missingEntry.type}</td>
+            </tr>
+        {/each}
+        </tbody>
+    </table>
 </div>
