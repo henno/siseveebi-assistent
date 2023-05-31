@@ -13,9 +13,17 @@
     export const getInlineAnchor: PlasmoGetInlineAnchor = () =>
         document.querySelector("#daybook_done_info_panel_all > div.panel-body")
 
-    export const mountShadowHost: PlasmoMountShadowHost = ({anchor, shadowHost}) => {
-        anchor!.element!.insertBefore(shadowHost!, anchor!.element!.firstChild)
+
+    export const mountShadowHost: PlasmoMountShadowHost = ({
+                                                               shadowHost,
+                                                               anchor,
+                                                               observer
+                                                           }) => {
+        anchor.element.appendChild(shadowHost)
+        observer.disconnect() // OPTIONAL DEMO: stop the observer as needed
     }
+
+
 </script>
 
 <script>
