@@ -2,9 +2,28 @@
     import type {
         PlasmoCSConfig,
         PlasmoGetInlineAnchor,
-        PlasmoMountShadowHost
+        PlasmoMountShadowHost,
+        PlasmoGetStyle
     } from "plasmo"
-
+    export const getStyle: PlasmoGetStyle = () => {
+        const style = document.createElement("style")
+        style.textContent = `
+    dt {
+        font-weight: bold;
+        line-height: 1.5;
+        box-sizing: border-box;
+        display: block;
+        font-size: 13px;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        color: #333;
+        background-color: #fff;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+  `
+        return style
+    }
     export const config: PlasmoCSConfig = {
         matches: ["https://siseveeb.voco.ee/kutseope/oppetoo/paevik/taitmine*"]
     }
@@ -33,6 +52,9 @@
 </script>
 
 <div>
-    <span style="color: red;">{count}</span>
-    <button on:click={increment}>A lie is a very poor way to say hello</button>
+    <dl>
+        <dt>Count</dt>
+        <dd>{count}</dd>
+    </dl>
+
 </div>
