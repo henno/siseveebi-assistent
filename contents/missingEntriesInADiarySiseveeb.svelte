@@ -47,55 +47,16 @@
         observer.disconnect() // OPTIONAL DEMO: stop the observer as needed
     }
 
-    export let foo = 'bar'
-
-    const timetableData = Timetable.getAsync(teacherId, groupName, subjectName)
-    const givenLessonData = Diary.getExistingLessonsAsync(document.getElementById("given_lesson_table"))
-
 
 </script>
 
 <script>
+    import {onMount} from 'svelte';
     export let anchor;
-    let missingEntries = [
-        {day: "2021-09-01", hours: 2, type: "S"},
-    ]
-
-    console.log(foo)
-
-    import { onMount } from 'svelte';
-
-    // Get the id from a page string using regex to get the id of the user
-    function getId(fetchId) {
-        // example data: $(document).ready(function(){page_data.previously_logged_user_id=28243;
-        // match the id between the = and the ;
-        return fetchId.match(/page_data.previously_logged_user_id=(.*?);/)[1]
-    }
-
+    let missingEntries = [];
     onMount(async () => {
-        const fetchId = await fetch("https://siseveeb.voco.ee/toidu_menuu").then(res => res.text())
-        // Do something with the fetched data
-        const idMatch = getId(fetchId)
-        console.log(idMatch)
-        localStorage.setItem("id", idMatch);
-        // Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'local')
-        // chrome.storage.local.get(['id'], (result) => {
-
-        console.log('3')
-
-        // Define a function to send a message to the background script
-        function sendMessageToBackground(message) {
-            chrome.runtime.sendMessage(message, (response) => {
-                // Handle the response from the background script if needed
-                console.log('Response from background:', response);
-            });
-        }
-
-        // Example usage of sending a message to the background script
-        const message = {
-            data: fetchId,
-        };
-        sendMessageToBackground(message);
+        missingEntries = await Timetable.getMissingEntriesAsync()
+        console.log(missingEntries)
     });
 </script>
 

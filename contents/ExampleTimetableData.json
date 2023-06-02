@@ -1,0 +1,44 @@
+{
+  "nadal": "2023-05-22",
+  "tunnid": {
+    "2023-05-25": [
+      {
+        "tund": "3",
+        "algus": "10:15",
+        "lopp": "11:45",
+        "aine": "kasutab UI testide loomise raamistikke",
+        "grupp": "VSo21",
+        "opetaja": "Henno Täht",
+        "ruum": "Kopli A - A418 (Arvutiklass)"
+      },
+      {
+        "tund": "4",
+        "algus": "11:55",
+        "lopp": "14:00",
+        "aine": "kasutab UI testide loomise raamistikke",
+        "grupp": "VSo21",
+        "opetaja": "Henno Täht",
+        "ruum": "Kopli A - A418 (Arvutiklass)"
+      },
+      {
+        "tund": "5",
+        "algus": "14:10",
+        "lopp": "15:40",
+        "aine": "dokumenteerib testi tulemused lähtudes dokumenteerimise standarditest",
+        "grupp": "VSo21",
+        "opetaja": "Henno Täht",
+        "ruum": "Kopli A - A418 (Arvutiklass)"
+      },
+      {
+        "tund": "6",
+        "algus": "15:45",
+        "lopp": "17:15",
+        "aine": "dokumenteerib testi tulemused lähtudes dokumenteerimise standarditest",
+        "grupp": "VSo21",
+        "opetaja": "Henno Täht",
+        "ruum": "Kopli A - A418 (Arvutiklass)"
+      }
+    ]
+  },
+  "viimane_muudatus": "2023-05-23 11:40:14"
+}

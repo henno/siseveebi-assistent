@@ -1,4 +1,8 @@
 export class Diary {
+    /**
+     * Get the existing lessons from the diary page
+     * @returns {*[{day: string, amount: number, type: string}]}
+     */
     static getExistingLessonsAsync(givenLessonTable) {
 
         // get the table
