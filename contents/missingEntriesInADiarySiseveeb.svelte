@@ -5,6 +5,8 @@
         PlasmoMountShadowHost,
         PlasmoGetStyle
     } from "plasmo"
+    import {Timetable} from "~contents/Timetable";
+    import {Diary} from "~contents/Diary";
 
     export const getStyle: PlasmoGetStyle = () => {
         const style = document.createElement("style")
@@ -45,14 +47,21 @@
         observer.disconnect() // OPTIONAL DEMO: stop the observer as needed
     }
 
+    export let foo = 'bar'
+
+    const timetableData = Timetable.getAsync(teacherId, groupName, subjectName)
+    const givenLessonData = Diary.getExistingLessonsAsync(document.getElementById("given_lesson_table"))
+
 
 </script>
 
 <script>
-    console.log(2)
+    export let anchor;
     let missingEntries = [
         {day: "2021-09-01", hours: 2, type: "S"},
     ]
+
+    console.log(foo)
 
     import { onMount } from 'svelte';
 
